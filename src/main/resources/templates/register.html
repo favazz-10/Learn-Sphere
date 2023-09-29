@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Register Page</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			background-color: #DCD9D4;
+			background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), radial-gradient(at 50% 0%, rgba(255, 255, 255, 0.10) 0%, rgba(0, 0, 0, 0.50) 50%);
+			background-blend-mode: soft-light, screen;
+			font-family: sans-serif;
+		}
+
+		.container {
+			width: 100%;
+			max-width: 400px;
+		}
+
+		.register-box {
+			background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+			border-radius: 10px;
+			padding: 30px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+		}
+
+		h1 {
+			text-align: center;
+			color: #333;
+		}
+
+		form {
+			margin-top: 20px;
+		}
+
+		input {
+			width: 90%;
+
+			padding: 10px;
+			padding-left: 20px;
+			margin-bottom: 10px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+		}
+
+		.radio-group {
+			display: flex;
+			width: 90%;
+			padding: 10px;
+			padding-left:25px;
+			margin-bottom: 1px;
+			accent-color: #000000;
+	
+
+		}
+
+		.radio-label {
+			color: #333;
+			display: flex;
+			align-items: center;
+			margin-right: 10px;
+			padding-left: 50px;
+		}
+
+		.radio-input {
+			margin: 0 5px;
+
+		}
+
+
+		button {
+			width: 50%;
+			display: block;
+			margin: 0 auto;
+			padding: 10px;
+			background-color: #ff6f61;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #ff4e45;
+		}
+
+		p {
+			text-align: center;
+			font-family: 'Times New Roman', Times, serif;
+			font-weight: 100;
+		}
+
+		a {
+			color: #ff6f61;
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: #ff4e45;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="register-box">
+			<h1>Register Page</h1>
+			<form action="/addUser" method="post">
+				<input type="text" placeholder="Username" required name="username">
+				<input type="email" placeholder="Email" required name="email">
+				<input type="password" placeholder="Password" required name="password">
+
+				<div class="radio-group">
+					<p style="font-family: 'Times New Roman', Times, serif;font-weight: 300;">Role:</p>
+					<label class="radio-label" for="trainer">
+						<input type="radio" name="role" id="trainer" value="Trainer" class="radio-input" required>
+						Trainer
+					</label>
+
+					<label class="radio-label" for="student">
+						<input type="radio" name="role" id="student" value="Student" class="radio-input" required>
+						Student
+					</label>
+				</div>
+
+				<button type="submit">Register</button>
+			</form>
+			<p>Already have an account? <a href="/login">Login</a></p>
+		</div>
+	</div>
+</body>
+
+</html>

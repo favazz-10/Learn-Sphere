@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <style>
+    
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f2f2f2;
+      backdrop-filter: blur(4px);
+      background-image: url('https://images.unsplash.com/photo-1599488059863-ac95a7f49193?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')
+    }
+    
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      color: #f2f2f2;
+      
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-weight: 900;
+      font-size: 25px;
+    }
+    
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .button-container button {
+      margin: 5px;
+      padding: 12px 24px;
+      font-size: 16px;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #loginBtn {
+      background-color: #ff6f61;
+    }
+
+    #loginBtn:hover {
+      background-color: #ff4e45;
+    }
+
+    #registerBtn {
+      background-color: #41b3a3;
+    }
+
+    #registerBtn:hover {
+      background-color: #368c7c;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Welcome to Learn Sphere</h1>
+    <div class="button-container">
+      <button onclick="location.href='/login';" id="loginBtn">Login</button>
+      <button onclick="location.href='/register';" id="registerBtn">Register</button>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+<!--
+	
+	//script code for alternative button click
+  <script>
+    
+    const loginButton = document.getElementById("loginBtn");
+    const registerButton = document.getElementById("registerBtn");
+
+    loginButton.addEventListener("click", () => {
+      // Redirect to the login page or handle the login logic here
+      window.location.href="/login"
+      
+    });
+
+    registerButton.addEventListener("click", () => {
+      // Redirect to the register page or handle the register logic here
+       window.location.href="/register"
+      
+    });
+  </script>
+  -->
+</body>
+</html>
+

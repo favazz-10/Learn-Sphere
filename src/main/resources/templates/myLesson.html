@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View Course</title>
+
+<!-- Add jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<style>
+	
+	body{
+		margin-top: 30px;
+		background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+	}
+	table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    tr {
+      background-color: #f2f2f2;
+    }
+</style>
+
+</head>
+<body>
+    <div class="container" >
+        <h2 class="mb-4">Lesson Details:</h2>
+        <table border="2px">
+            <thead>
+                <tr>
+                    <th scope="col">Lesson Id</th>
+                    <th scope="col">Lesson Name</th>
+                    <th scope="col">Lesson Topics</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td th:text="${lesson.lessonId}"></td>
+                    <td th:text="${lesson.lessonName}"></td>
+                    <td th:text="${lesson.lessonTopics}"></td>
+                    
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="mt-4 mb-4">Lesson Video:</h2>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" 
+                    th:src="@{'https://www.youtube.com/embed/' + ${lesson.lessonLink}}" 
+                    title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; 
+                    encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+
+
+       
+
+   
+</body>
+</html>

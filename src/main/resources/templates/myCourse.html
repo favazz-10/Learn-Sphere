@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>My Courses</title>
+<style>
+	
+	body{
+		margin-top: 30px;
+		background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+	}
+	table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    tr {
+      background-color: #f2f2f2;
+    }
+    a{
+		text-decoration: none;
+	}
+  </style>
+</head>
+<body>
+<table class="table table-success table-striped table-bordered" border="2px">
+  <thead>
+    <tr>
+      <th scope="col">Course Id</th>
+      <th scope="col">Course Name</th>
+      <th scope="col">Course Price</th>
+      <th scope="col">Lessons</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="course:${courseList}">
+      <td th:text="${course.courseId}"></td>
+      <td th:text="${course.courseName}"></td>
+      <td th:text="${course.coursePrice}"></td>
+      <td>
+        <span th:each="lesson, lessonStat : ${course.lessonList}">
+			
+		    <a th:href="@{/viewLesson(lessonId=${lesson.lessonId})}" th:text="${lesson.lessonName}"></a><span th:if="${!lessonStat.last}">,&nbsp;</span>
+		</span>
+
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+		
+</body>
+</html>

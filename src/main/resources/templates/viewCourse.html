@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>View Course</title>
+<style>
+	
+	body{
+		margin-top: 30px;
+		background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+	}
+	table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    tr {
+      background-color: #f2f2f2;
+    }
+  </style>
+	
+</head>
+<body>
+	<table border="2px">
+		<thead>
+		<tr>
+			<th>CID</th>
+			<th>CNAME</th>
+			<th>CPRICE</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr th:each="ct:${cList}">
+			<td th:text="${ct.courseId}"></td>
+			<td th:text="${ct.courseName}"></td>
+			<td th:text="${ct.coursePrice}"></td>
+			
+	
+		</tbody>
+	</table>
+
+</body>
+</html>
